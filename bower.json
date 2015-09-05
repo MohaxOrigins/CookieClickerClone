@@ -1,0 +1,17 @@
+{
+  "name": "CCC",
+  "version": "0.1.0 A",
+  "description": "Cookie Clicker Clone",
+  "main": "index.html",
+  "authors": [
+    "Moe"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-theme.css">
+
+</head>
+<body ng-app="myApp" class="bdr">
+<script src="angular.js"></script>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+<script src="AngularScript.js"></script>
+<div ng-controller="cont">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Mohax</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a>{{PPC/100}} Dough per click</a></li>
+                    <li><a>{{CperC}} Cookies per Dough</a></li>
+                    <li><a>{{milk}} Litres of Milk</a></li>
+                    <li><a>{{grammy}} grammies</a></li>
+                    <li class="active"><a>{{Cookies}} Wasayit</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a>Nukem' rico</a></li>
+                            <li><a style="color:red;">Reset game</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>Visit us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+  <div class="center">
+      <div ng-click="Progressbar()">
+      <img height="200" width="200" src="letter3.png">
+          <div class="progress">
+              <div class="progress-bar progress-bar-success" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+              </div>
+          </div>
+  </div>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <a data-toggle="collapse" aria-expanded="false" class="collapsed"> Open Shop</a>
+              <div class="panel-collapse in panel-collapse" aria-expanded="false">
+              <ul class="list-group">
+                  <li class="list-group-item"><a ng-click="Clicker()">Buy wastit wazir {{price[0]}}W</a></li>
+                  <li class="list-group-item"><a ng-click="BMilk()">Buy wastit emti7an {{price[1]}}W</a></li>
+                  <li class="list-group-item"><a ng-click="Grammy()">Buy wastit ra2is {{price[2]}}W</a></li>
+              </ul>
+                  </div>
+          </div>
+      </div>
+</body>
+</html>

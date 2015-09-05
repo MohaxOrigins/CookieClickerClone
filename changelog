@@ -1,0 +1,13 @@
+ver 0.2.0 {
+-Changed Whole concept.
+-Fixed some spelling mistakes.
+}
+ver 0.1.1 A {
+-Moved Shop from navbar to under the cookie.
+-Added sounds for Shop.
+-Removed God Mode.
+}
+ver 0.1.0 A {
+-base functionalities.
+-first closed alpha.
+}

@@ -1,0 +1,19 @@
+.center {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top:60px;
+}
+
+.tr{
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+}
+.cer{
+    text-align: center;
+    border-radius: 15px;
+}
+.bdr{
+    background-color: darkgray;
+}
