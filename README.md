@@ -9,9 +9,9 @@ Succesful bribes give you more prestige and money, while also decreasing your pr
 
 I hope this game keeps you entertained as It's my first game.
 
-#===================================
+#=================================
 #Technical Stuff here, Not important
-#===================================
+#=================================
 
 
 #Current Functionailities:
