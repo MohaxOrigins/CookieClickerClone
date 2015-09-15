@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="myApp" class="bdr">
+<head>
+    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+    <title>{{Title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="angular-growl.css">
+    <!--Scripts-->
+    <script src="jquery.js"></script>
+    <script src="bootstrap.js"></script>
+
+    <script src="angular.js"></script>
+    <script src="AngularScript.js"></script>
+    <script src="angular-growl.js"></script>
+
+</head>
+<body>
+<div>
+<div ng-controller="cont">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Mohax</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+
+                <ul class="nav navbar-nav">
+                    <li><a>{{Prestige}} Prestige</a></li>
+                    <li><a>{{Money|currency}}</a></li>
+                    <li><a>{{Age}} Years Old</a></li>
+                    <li><a>Turn {{Turn}}</a></li>
+                    <li><a>{{Bottles}} Bottles </a></li>
+                    <li><a>Rent Payments in: {{Rent}} Days</a></li>
+                    <li><a>Bottle price: {{BottlePrice|currency}}</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a>More Info</a></li>
+                            <li><a style="color:red;" ng-click="reset()">Reset game</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a>Ver: {{Ver}}</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="row">
+  <div class="container-fluid">
+      <div class="col-md-6">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <p class="panel-title">Actions</p>
+              </div>
+              <div class="panel-body">
+                  <div class="row">
+                  <div class="col-md-4 action">
+                  <button class="btn btn-default action" ng-click="WorkActions(2)">
+                      Sell bottles
+                  </button>
+                      </div>
+                      <div class="col-md-4 ">
+                          <button class="btn btn-default action" ng-click="dead()">
+                              Die
+                          </button>
+                          </div>
+                          <div class="col-md-4 action">
+                              <button class="btn btn-default action" ng-click="Notif()">
+                                  Sell bottles
+                              </button>
+                              </div>
+                      </div>
+                  <div class="row">
+                      <div class="col-md-4">
+
+                      </div>
+                      <div class="col-md-4">
+                          <div class="alert alert-info" style="margin-top:10px;">
+                              {{Msg}}
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+          <div class="panel panel-primary">
+              <div class="panel-heading"><p class="panel-title">Stats</p></div>
+              <div class="panel-body">
+          <div class="progress">
+              <div class="progress-bar progress-bar-striped" ng-class="MoodBar" aria-valuenow="{{Mood}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Mood}}%;">
+                  <p style="color:grey;">Mood</p>
+              </div>
+          </div>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped" ng-class="HungerBar" aria-valuenow="{{Hunger}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Hunger}}%;">
+                          <p style="color:grey;">Hunger</p>
+                      </div>
+                  </div>
+                  <div class="progress">
+                      <div class="progress-bar progress-bar-striped" ng-class="HealthBar" aria-valuenow="{{Health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Health}}%;">
+                          <p style="color:grey;">Health</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="alert alert-success">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Success!</strong> Indicates a successful or positive action.
+          </div>
+
+</div>
+      <div class="col-md-6">
+          <ul class="nav nav-tabs nav-justified">
+              <li class="ng-class: JobsA;" ng-click="JobsAc()"><a>Jobs</a></li>
+              <li class="ng-class: HousesA;" ng-click="HousesAc()"><a>Houses</a></li>
+              <li class="ng-class: WorkA;" ng-click="WorkAc()"><a >Work</a></li>
+              <li class="ng-class: TransportA;" ng-click="TransportAc()"><a >Transport</a></li>
+              <li class="ng-class: EatA;" ng-click="EatAc()"><a>Eat</a></li>
+              <li class="ng-class: Misc;" ng-click="MiscAc()"><a>Misc.</a></li>
+          </ul>
+          <div class="tab-content">
+              <div id="Jobs-Tab" ng-show="JobsA=='active'">
+                  <div class="container-fluid">
+                      <div class="row" >
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top: 20px" class="btn; ng-class: Job[0]">
+                                  Work at McDonalds
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; ng-class: Job[1]">
+                                  Work at SubWays
+                              </button>
+                          </div>
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top: 20px" class="btn; ng-class: Job[2]">
+                                  Deliver Pizzas
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; ng-class: Job[3]">
+                                  Be a ganster
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="HousesTab" ng-show="HousesA=='active'">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[0]">
+                                  Live in a box
+                              </button>
+                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[1]">
+                                  Live under The bridge
+                              </button>
+                          </div>
+                          <div class="col-md-6">
+                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[2]">
+                                  Rent a Room
+                              </button>
+                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[3]">
+                                  Rent an appartement
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="WorkTab" ng-show="WorkA=='active'">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top:20px;" class="btn; btn-default" ng-click="WorkActions(1)">
+                                  Search for bottles
+                              </button>
+                              <button style="width:100%; margin-top:20px;" class="btn; btn-default">
+                                  Rob a stranger
+                              </button>
+                          </div>
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top:20px;"class="btn; btn-default">
+                                  Search in Shops for bottles
+                              </button>
+                              <button style="width:100%; margin-top:20px;"class="btn; btn-default">
+                                  Roam The streets
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="TransportTab" ng-show="TransportA=='active'">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top:20px;" class="btn; ng-class: Transport[0]">
+                                  Buy shoes
+                              </button>
+                              <button style="width:100%; margin-top:20px;" class="btn; ng-class: Transport[1]">
+                                  Buy skateboard
+                              </button>
+                          </div>
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top:20px;"class="btn; ng-class: Transport[2]">
+                                  buy motorcycle
+                              </button>
+                              <button style="width:100%; margin-top:20px;"class="btn; ng-class: Transport[3]">
+                                  buy car
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="EatTab" ng-show="EatA=='active'">
+                  <div class="container-fluid">
+                      <div class="row" >
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default" ng-click="WorkActions(3);">
+                                  Search Trash
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
+                                  Cadge in the metro
+                              </button>
+                          </div>
+                          <div class="col-md-6">
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
+                                  Steal from shops
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
+                                  Ask shops for free food
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div id="MiscTab" ng-show="MiscA=='active'">
+                  <div class="container-fluid">
+                      <div class="row" >
+                          <div class="col-md-6">
+                              <div class="panel panel-info" style="margin-top:10px;">
+                              <div class="panel-heading">
+                                  Mood
+                                  </div>
+                              <div class="panel-body">
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default" ng-click="WorkActions(4);">
+                                  Rest in park
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
+                                  Drink Beer at bar
+                              </button>
+                                  </div>
+                                  </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="panel panel-info" style="margin-top:10px;">
+                                  <div class="panel-heading">
+                                      Health
+                                  </div>
+                                  <div class="panel-body">
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default" ng-click="WorkActions(5)">
+                                  Search for Meds
+                              </button>
+                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
+                                  Go to public hospital
+                              </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "LSB",
+  "version": "0.2.2 A",
+  "description": "Life Sim BETA",
+  "main": "index.html",
+  "authors": [
+    "Moe"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
