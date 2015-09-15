@@ -2,6 +2,7 @@
   "name": "LSB",
   "version": "0.2.2 A",
   "description": "Life Sim BETA",
+
   "main": "index.html",
   "authors": [
     "Moe"

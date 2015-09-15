@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO:  Changes with "--"means they are planned
        Changes with "-" means we are currently working on them
        Changes with "+" means they are done
@@ -16,4 +17,3 @@ INFO:  Changes with "--"means they are planned
 }
 Pre 0.2{
 +Building the design
-}

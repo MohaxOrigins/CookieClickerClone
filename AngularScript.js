@@ -155,4 +155,3 @@ app.controller('cont',['$scope', 'growl', function($scope, growl){
     $scope.MoodBar="progress-bar-success";
     $scope.HungerBar="progress-bar-success";
 }]);
-

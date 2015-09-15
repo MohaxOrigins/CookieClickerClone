@@ -3,6 +3,8 @@
 <head>
     <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
     <title>{{Title}}</title>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="StyleSheet.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -11,14 +13,16 @@
     <!--Scripts-->
     <script src="jquery.js"></script>
     <script src="bootstrap.js"></script>
-
     <script src="angular.js"></script>
     <script src="AngularScript.js"></script>
     <script src="angular-growl.js"></script>
 
 </head>
-<body>
-<div>
+<body ng-app="myApp" class="bdr">
+<script src="angular.js"></script>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+<script src="AngularScript.js"></script>
 <div ng-controller="cont">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -27,7 +31,6 @@
             </div>
 
             <div class="collapse navbar-collapse">
-
                 <ul class="nav navbar-nav">
                     <li><a>{{Prestige}} Prestige</a></li>
                     <li><a>{{Money|currency}}</a></li>
@@ -41,9 +44,9 @@
                         <ul class="dropdown-menu">
                             <li><a>More Info</a></li>
                             <li><a style="color:red;" ng-click="reset()">Reset game</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                            </ul>
+                        </li>
+                    </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a>Ver: {{Ver}}</a></li>
                 </ul>
