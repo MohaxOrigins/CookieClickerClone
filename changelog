@@ -1,0 +1,19 @@
+INFO:  Changes with "--"means they are planned
+       Changes with "-" means we are currently working on them
+       Changes with "+" means they are done
+0.3{
+--Finish Game Logic
+}
+0.2.2{
+-Finish current actions
+}
+0.2.1{
+-Add Notification Board
++Add Random Messages
+}
+0.2.0{
++Basic Functionalities
+}
+Pre 0.2{
++Building the design
+}
