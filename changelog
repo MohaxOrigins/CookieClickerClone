@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+CHANGELOG=========================
+change log starts as of Version 0.3.
+TODO =============================
 INFO:  Changes with "--"means they are planned
        Changes with "-" means we are currently working on them
        Changes with "+" means they are done
@@ -6,10 +8,11 @@ INFO:  Changes with "--"means they are planned
 --Finish Game Logic
 }
 0.2.2{
--Finish current actions
+--Random Encounters/Events
+--Finish current actions
 }
 0.2.1{
--Add Notification Board
++Add Notification Board
 +Add Random Messages
 }
 0.2.0{
@@ -17,3 +20,4 @@ INFO:  Changes with "--"means they are planned
 }
 Pre 0.2{
 +Building the design
+}

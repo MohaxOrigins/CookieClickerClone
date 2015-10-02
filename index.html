@@ -1,29 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="myApp" class="bdr">
-<head>
-    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
-    <title>{{Title}}</title>
-<html lang="en">
+<html lang="en"  ng-app="myApp" class="bdr"   ng-controller="cont">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="angular-growl.css">
-    <!--Scripts-->
-    <script src="jquery.js"></script>
-    <script src="bootstrap.js"></script>
-    <script src="angular.js"></script>
-    <script src="AngularScript.js"></script>
-    <script src="angular-growl.js"></script>
-
+    <title>{{Title}}</title>
 </head>
-<body ng-app="myApp" class="bdr">
-<script src="angular.js"></script>
-<script src="jquery.js"></script>
-<script src="bootstrap.js"></script>
-<script src="AngularScript.js"></script>
-<div ng-controller="cont">
+<div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -73,21 +58,21 @@
                           </button>
                           </div>
                           <div class="col-md-4 action">
-                              <button class="btn btn-default action" ng-click="Notif()">
+                              <button class="btn btn-default action" ng-click="addSpecialWarnMessage()">
                                   Sell bottles
                               </button>
                               </div>
                       </div>
                   <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-3">
 
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-6">
                           <div class="alert alert-info" style="margin-top:10px;">
                               {{Msg}}
                           </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
 
                       </div>
                   </div>
@@ -98,27 +83,31 @@
               <div class="panel-heading"><p class="panel-title">Stats</p></div>
               <div class="panel-body">
           <div class="progress">
-              <div class="progress-bar progress-bar-striped" ng-class="MoodBar" aria-valuenow="{{Mood}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Mood}}%;">
+              <div class="progress-bar progress-bar-striped" ng-class="MoodBar" aria-valuenow="{{Mood}}" aria-valuemin="0" aria-valuemax="100" style="width:{{Mood}}%;">
                   <p style="color:grey;">Mood</p>
               </div>
           </div>
                   <div class="progress">
-                      <div class="progress-bar progress-bar-striped" ng-class="HungerBar" aria-valuenow="{{Hunger}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Hunger}}%;">
+                      <div class="progress-bar progress-bar-striped" ng-class="HungerBar" aria-valuenow="{{Hunger}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Hunger}}%">
                           <p style="color:grey;">Hunger</p>
                       </div>
                   </div>
                   <div class="progress">
-                      <div class="progress-bar progress-bar-striped" ng-class="HealthBar" aria-valuenow="{{Health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Health}}%;">
+                      <div class="progress-bar progress-bar-striped" ng-class="HealthBar" aria-valuenow="{{Health}}" aria-valuemin="0" aria-valuemax="100" style="width: {{Health}}%">
                           <p style="color:grey;">Health</p>
                       </div>
                   </div>
               </div>
           </div>
-          <div class="alert alert-success">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <strong>Success!</strong> Indicates a successful or positive action.
+          <div class="alert alert-danger" ng-show="HungerShow" id="hunger alert">
+              <strong>Beware! you are not getting your nutrition!</strong>
           </div>
-
+          <div class="alert alert-danger" ng-show="MoodShow" id="Mood Alert">
+              <strong>Caution, you aren't entertained enough! </strong>
+          </div>
+          <div class="alert alert-danger" ng-show="HealthShow" id="Health Alert">
+              <strong>Oh My! you need to look after your health!</strong>
+          </div>
 </div>
       <div class="col-md-6">
           <ul class="nav nav-tabs nav-justified">
@@ -156,18 +145,18 @@
                   <div class="container-fluid">
                       <div class="row">
                           <div class="col-md-6">
-                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[0]">
-                                  Live in a box
+                              <button style="margin-top:20px; width:100%;" class="btn; ng-class: House[0]">
+                                  Live in a box 10.00$
                               </button>
-                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[1]">
-                                  Live under The bridge
+                              <button style="margin-top:20px; width:100%;" class="btn; ng-class: House[1]">
+                                  Live under The bridge 30.00$
                               </button>
                           </div>
                           <div class="col-md-6">
-                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[2]">
-                                  Rent a Room
+                              <button style="margin-top:20px; width:100%;" class="btn; ng-class: House[2]">
+                                  Rent a Room (50 $ a month)
                               </button>
-                              <button style="margin-top:20px; width:100%;"class="btn; ng-class: House[3]">
+                              <button style="margin-top:20px; width:100%;" class="btn; ng-class: House[3]">
                                   Rent an appartement
                               </button>
                           </div>
@@ -177,21 +166,14 @@
               <div id="WorkTab" ng-show="WorkA=='active'">
                   <div class="container-fluid">
                       <div class="row">
-                          <div class="col-md-6">
-                              <button style="width:100%; margin-top:20px;" class="btn; btn-default" ng-click="WorkActions(1)">
-                                  Search for bottles
-                              </button>
-                              <button style="width:100%; margin-top:20px;" class="btn; btn-default">
-                                  Rob a stranger
-                              </button>
+                          <div class="col-md-2">
                           </div>
-                          <div class="col-md-6">
-                              <button style="width:100%; margin-top:20px;"class="btn; btn-default">
-                                  Search in Shops for bottles
+                          <div class="col-md-8">
+                              <div ng-repeat="Work in Works">
+                              <button style="width:100%; margin-top:20px;" class="btn; btn-default" ng-click="WorkActions(Work.id)" ng-show="Work.conditions">
+                                  {{Work.Msg}}
                               </button>
-                              <button style="width:100%; margin-top:20px;"class="btn; btn-default">
-                                  Roam The streets
-                              </button>
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -199,20 +181,10 @@
               <div id="TransportTab" ng-show="TransportA=='active'">
                   <div class="container-fluid">
                       <div class="row">
-                          <div class="col-md-6">
+                          <div class="col-md-2"></div>
+                          <div class="col-md-8">
                               <button style="width:100%; margin-top:20px;" class="btn; ng-class: Transport[0]">
                                   Buy shoes
-                              </button>
-                              <button style="width:100%; margin-top:20px;" class="btn; ng-class: Transport[1]">
-                                  Buy skateboard
-                              </button>
-                          </div>
-                          <div class="col-md-6">
-                              <button style="width:100%; margin-top:20px;"class="btn; ng-class: Transport[2]">
-                                  buy motorcycle
-                              </button>
-                              <button style="width:100%; margin-top:20px;"class="btn; ng-class: Transport[3]">
-                                  buy car
                               </button>
                           </div>
                       </div>
@@ -221,20 +193,10 @@
               <div id="EatTab" ng-show="EatA=='active'">
                   <div class="container-fluid">
                       <div class="row" >
-                          <div class="col-md-6">
+                          <div class="col-md-2"></div>
+                          <div class="col-md-8">
                               <button style="width:100%; margin-top: 20px" class="btn; btn-default" ng-click="WorkActions(3);">
                                   Search Trash
-                              </button>
-                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
-                                  Cadge in the metro
-                              </button>
-                          </div>
-                          <div class="col-md-6">
-                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
-                                  Steal from shops
-                              </button>
-                              <button style="width:100%; margin-top: 20px" class="btn; btn-default">
-                                  Ask shops for free food
                               </button>
                           </div>
                       </div>
@@ -279,7 +241,14 @@
           </div>
       </div>
       </div>
+        </div>
     </div>
+<!-- Scripts -->
+<script src="Lists.js"></script>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+<script src="angular.js"></script>
+<script src="AngularScript.js"></script>
 
 </body>
 </html>
